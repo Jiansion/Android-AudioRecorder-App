@@ -89,7 +89,7 @@ public class AudioRecorder implements IAudioRecorder {
   private final Flowable<byte[]> audioDataFlowable = Flowable.create(emitter -> {
     int bufferSize = 4 * 1024;
 
-    AudioRecord recorder = new AudioRecord(MediaRecorder.AudioSource.VOICE_CALL, mRecorderSampleRate,
+    AudioRecord recorder = new AudioRecord(MediaRecorder.AudioSource.VOICE_COMMUNICATION, mRecorderSampleRate,
         Constants.RECORDER_CHANNELS, Constants.RECORDER_AUDIO_ENCODING, bufferSize);
     audioSaveHelper.createNewFile();
 
